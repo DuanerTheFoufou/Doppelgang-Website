@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doppelgang - Find Your Twin</title>
-    
+
     <!-- Preconnect for font performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,22 +13,24 @@
 
     <style>
         :root {
-            /* Apple-style Light Theme Variables */
-            --bg-color: #F5F5F7; /* Soft Light Grey */
+            /* Apple-style Light Themed Variables */
+            --bg-color: #F5F5F7;
+            /* Soft Light Grey */
             --bg-card: #FFFFFF;
-            --text-main: #1D1D1F; /* Almost Black */
+            --text-main: #1D1D1F;
+            /* Almost Black */
             --text-muted: #86868B;
-            
+
             /* Vibrant "Happy" Green */
-            --accent-color: #06C755; 
+            --accent-color: #06C755;
             --accent-hover: #00B34A;
             --accent-light: rgba(6, 199, 85, 0.1);
-            
+
             --border-color: #D2D2D7;
             --glass-bg: rgba(255, 255, 255, 0.8);
             --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
             --shadow-lg: 0 20px 40px -5px rgba(0, 0, 0, 0.1), 0 10px 20px -5px rgba(0, 0, 0, 0.04);
-            
+
             --font-stack: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
@@ -52,7 +55,10 @@
         }
 
         /* --- Typography --- */
-        h1, h2, h3, h4 {
+        h1,
+        h2,
+        h3,
+        h4 {
             color: var(--text-main);
             font-weight: 700;
             letter-spacing: -0.02em;
@@ -113,7 +119,8 @@
             align-items: center;
             justify-content: center;
             padding: 14px 28px;
-            border-radius: 980px; /* Pill shape */
+            border-radius: 980px;
+            /* Pill shape */
             font-weight: 600;
             font-size: 1.05rem;
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -126,12 +133,13 @@
 
         .btn-primary {
             background-color: var(--accent-color);
-            color: #FFFFFF !important; /* Force White Text */
+            color: #FFFFFF !important;
+            /* Force White Text */
             border: 1px solid transparent;
             z-index: 10;
             box-shadow: 0 4px 12px rgba(6, 199, 85, 0.3);
         }
-        
+
         .btn-primary:hover {
             background-color: var(--accent-hover);
             transform: translateY(-2px);
@@ -159,7 +167,7 @@
             background-color: var(--glass-bg);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
             z-index: 1000;
             padding: 1rem 0;
         }
@@ -220,7 +228,7 @@
             width: 100%;
             height: 100%;
             z-index: 0;
-            opacity: 1; 
+            opacity: 1;
             pointer-events: none;
         }
 
@@ -263,7 +271,8 @@
         .phone-mockup {
             width: 300px;
             height: 600px;
-            border: 8px solid #1D1D1F; /* Dark border for contrast on light bg */
+            border: 8px solid #1D1D1F;
+            /* Dark border for contrast on light bg */
             border-radius: 56px;
             background: #000;
             position: relative;
@@ -287,7 +296,8 @@
         .phone-screen {
             width: 100%;
             height: 100%;
-            background: #000; /* Screen stays black */
+            background: #000;
+            /* Screen stays black */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -306,17 +316,34 @@
             box-shadow: 0 0 20px var(--accent-color);
             z-index: 10;
             opacity: 0;
-            animation: scanLoop 3s ease-in-out infinite; 
+            animation: scanLoop 3s ease-in-out infinite;
         }
 
         @keyframes scanLoop {
-            0% { top: 10%; opacity: 0; }
-            10% { opacity: 1; }
-            50% { opacity: 1; }
-            60% { top: 90%; opacity: 0; }
-            100% { top: 90%; opacity: 0; }
+            0% {
+                top: 10%;
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            60% {
+                top: 90%;
+                opacity: 0;
+            }
+
+            100% {
+                top: 90%;
+                opacity: 0;
+            }
         }
-        
+
         .mock-avatar {
             width: 120px;
             height: 120px;
@@ -331,11 +358,14 @@
             box-shadow: 0 0 30px rgba(6, 199, 85, 0.4);
             z-index: 5;
         }
-        
+
         /* Mesh overlay */
         .face-mesh-overlay {
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             border-radius: 50%;
             background-image: radial-gradient(var(--accent-color) 1px, transparent 1px);
             background-size: 10px 10px;
@@ -343,10 +373,15 @@
             mask-image: radial-gradient(circle, black 40%, transparent 80%);
             animation: rotateMesh 10s linear infinite;
         }
-        
+
         @keyframes rotateMesh {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         .mock-avatar::after {
@@ -360,7 +395,12 @@
         }
 
         @keyframes ping {
-            75%, 100% { transform: scale(1.6); opacity: 0; }
+
+            75%,
+            100% {
+                transform: scale(1.6);
+                opacity: 0;
+            }
         }
 
         .results-container {
@@ -371,7 +411,7 @@
 
         .mock-match-card {
             padding: 12px;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 12px;
             margin-bottom: 10px;
             display: flex;
@@ -382,15 +422,41 @@
             backdrop-filter: blur(10px);
         }
 
-        .card-1 { animation: slideUpFade 4s ease-out infinite; animation-delay: 1.5s; }
-        .card-2 { animation: slideUpFade 4s ease-out infinite; animation-delay: 1.8s; }
+        .card-1 {
+            animation: slideUpFade 4s ease-out infinite;
+            animation-delay: 1.5s;
+        }
+
+        .card-2 {
+            animation: slideUpFade 4s ease-out infinite;
+            animation-delay: 1.8s;
+        }
 
         @keyframes slideUpFade {
-            0% { opacity: 0; transform: translateY(20px); }
-            10% { opacity: 1; transform: translateY(0); }
-            80% { opacity: 1; transform: translateY(0); }
-            90% { opacity: 0; transform: translateY(-10px); }
-            100% { opacity: 0; transform: translateY(-10px); }
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            10% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            80% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            90% {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
         }
 
         .mock-mini-avatar {
@@ -400,10 +466,13 @@
             background: #444;
         }
 
-        .mock-lines { flex: 1; }
+        .mock-lines {
+            flex: 1;
+        }
+
         .mock-line {
             height: 6px;
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 4px;
             margin-bottom: 6px;
         }
@@ -468,7 +537,7 @@
             position: relative;
             overflow: hidden;
             box-shadow: var(--shadow-sm);
-            border: 1px solid rgba(0,0,0,0.03);
+            border: 1px solid rgba(0, 0, 0, 0.03);
         }
 
         .feature-card:hover {
@@ -504,7 +573,7 @@
             border-radius: 16px;
             background: var(--bg-color);
         }
-        
+
         .step-number {
             font-size: 1rem;
             font-weight: 700;
@@ -609,29 +678,63 @@
             display: inline-block;
         }
 
-        .footer-logo span { color: var(--accent-color); }
-        
-        .footer-links a { color: var(--text-muted); margin: 0 10px; }
-        .footer-links a:hover { color: var(--accent-color); }
+        .footer-logo span {
+            color: var(--accent-color);
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            margin: 0 10px;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
 
         /* --- Mobile --- */
         @media (max-width: 768px) {
-            h1 { font-size: 2.75rem; }
-            .hero { padding-top: 6rem; }
-            .nav-links { display: none; }
-            .app-badges { flex-direction: column; align-items: stretch; }
-            .phone-mockup { width: 280px; height: 560px; }
-            .legal-document-container { padding: 30px 20px; }
+            h1 {
+                font-size: 2.75rem;
+            }
+
+            .hero {
+                padding-top: 6rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .app-badges {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .phone-mockup {
+                width: 280px;
+                height: 560px;
+            }
+
+            .legal-document-container {
+                padding: 30px 20px;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <!-- NAVIGATION -->
     <header>
         <div class="container nav-content">
             <a href="#" class="logo">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-color)"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-color)">
+                    <path
+                        d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5" />
+                    <path d="M9 18h6" />
+                    <path d="M10 22h4" />
+                </svg>
                 Doppelgang<span>.</span>
             </a>
             <nav>
@@ -639,7 +742,8 @@
                     <li><a href="#features">Features</a></li>
                     <li><a href="#how-it-works">How it Works</a></li>
                     <li><a href="#legal">Legal</a></li>
-                    <li><a href="#" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.9rem;">Download App</a></li>
+                    <li><a href="#" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.9rem;">Download
+                            App</a></li>
                 </ul>
             </nav>
         </div>
@@ -652,11 +756,15 @@
 
         <div class="container hero-content">
             <h1>Find your face<br><span class="highlight-text">in the crowd.</span></h1>
-            <p class="hero-subtitle">Doppelgang uses advanced AI vector geometry to find your lookalikes among millions of profiles. Secure. Private. Accurate.</p>
-            
+            <p class="hero-subtitle">Doppelgang uses advanced AI vector geometry to find your lookalikes among millions
+                of profiles. Secure. Private. Accurate.</p>
+
             <div class="app-badges">
                 <a href="#" class="btn btn-primary">
-                    <svg style="margin-right:10px" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.21-1.98 1.07-3.11-1.06.05-2.36.71-3.13 1.59-.67.77-1.26 2.03-1.1 3.16 1.18.09 2.38-.81 3.16-1.64"/></svg>
+                    <svg style="margin-right:10px" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.21-1.98 1.07-3.11-1.06.05-2.36.71-3.13 1.59-.67.77-1.26 2.03-1.1 3.16 1.18.09 2.38-.81 3.16-1.64" />
+                    </svg>
                     Download on iOS
                 </a>
                 <a href="#features" class="btn btn-outline">Explore Features</a>
@@ -667,13 +775,17 @@
                     <div class="phone-notch"></div>
                     <div class="phone-screen">
                         <div class="scan-line"></div>
-                        
+
                         <!-- Avatar being scanned -->
                         <div class="mock-avatar">
                             <div class="face-mesh-overlay"></div>
-                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#fff"
+                                stroke-width="1.5">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                <circle cx="12" cy="7" r="4" />
+                            </svg>
                         </div>
-                        
+
                         <!-- Match Results (Dynamic Slide In) -->
                         <div class="results-container">
                             <div class="mock-match-card card-1">
@@ -691,7 +803,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Changing Text -->
                         <div class="status-text" id="statusText">Scanning Biometrics...</div>
                     </div>
@@ -731,28 +843,46 @@
                 <!-- Feature 1 -->
                 <div class="feature-card">
                     <div class="icon-box">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
                     </div>
                     <h3>Vector Security</h3>
-                    <p>We convert facial geometry into secure mathematical vectors. Your actual photo is never stored permanently, ensuring total privacy.</p>
+                    <p>We convert facial geometry into secure mathematical vectors. Your actual photo is never stored
+                        permanently, ensuring total privacy.</p>
                 </div>
 
                 <!-- Feature 2 -->
                 <div class="feature-card">
                     <div class="icon-box">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="8.5" cy="7" r="4" />
+                            <line x1="20" y1="8" x2="20" y2="14" />
+                            <line x1="23" y1="11" x2="17" y2="11" />
+                        </svg>
                     </div>
                     <h3>Zero Tolerance</h3>
-                    <p>A safe environment is our priority. Our community is AI-moderated to strictly prevent harassment and objectionable content.</p>
+                    <p>A safe environment is our priority. Our community is AI-moderated to strictly prevent harassment
+                        and objectionable content.</p>
                 </div>
 
                 <!-- Feature 3 -->
                 <div class="feature-card">
                     <div class="icon-box">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="2" y1="12" x2="22" y2="12" />
+                            <path
+                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                        </svg>
                     </div>
                     <h3>Global Reach</h3>
-                    <p>Find your twin across the globe. Our algorithm matches you based on pure bone structure, transcending race and geography.</p>
+                    <p>Find your twin across the globe. Our algorithm matches you based on pure bone structure,
+                        transcending race and geography.</p>
                 </div>
             </div>
         </div>
@@ -765,12 +895,13 @@
                 <h2>How It Works</h2>
                 <p>Three simple steps to finding your doppelgänger.</p>
             </div>
-            
+
             <div class="grid-3">
                 <div class="step-card">
                     <span class="step-number">01</span>
                     <h3 style="margin-bottom: 0.5rem; margin-top: 0.5rem;">Upload Selfie</h3>
-                    <p>Take a clear selfie. Our camera guide ensures perfect lighting and angle for the best results.</p>
+                    <p>Take a clear selfie. Our camera guide ensures perfect lighting and angle for the best results.
+                    </p>
                 </div>
                 <div class="step-card">
                     <span class="step-number">02</span>
@@ -796,30 +927,44 @@
                 <div id="eula" class="legal-content-block">
                     <div class="legal-title">End User License Agreement</div>
                     <span class="legal-date">Last Updated: November 25, 2025</span>
-                    
-                    <p class="legal-text">This End User License Agreement ("Agreement") is between you and Doppelgang ("Company") and governs use of this app made available through the Apple App Store. By installing the Doppelgang App, you agree to be bound by this Agreement.</p>
+
+                    <p class="legal-text">This End User License Agreement ("Agreement") is between you and Doppelgang
+                        ("Company") and governs use of this app made available through the Apple App Store. By
+                        installing the Doppelgang App, you agree to be bound by this Agreement.</p>
 
                     <h4 class="legal-subsection-title">1. User Generated Content (UGC)</h4>
-                    <p class="legal-text">Doppelgang allows users to upload photos and create profiles ("Content"). You retain ownership of your Content, but you grant Doppelgang a worldwide, royalty-free license to use, display, and perform your Content within the App for the purpose of operating the service.</p>
+                    <p class="legal-text">Doppelgang allows users to upload photos and create profiles ("Content"). You
+                        retain ownership of your Content, but you grant Doppelgang a worldwide, royalty-free license to
+                        use, display, and perform your Content within the App for the purpose of operating the service.
+                    </p>
 
                     <h4 class="legal-subsection-title">2. Objectionable Content Policy (Zero Tolerance)</h4>
-                    <p class="legal-text">Doppelgang maintains a <strong>zero-tolerance policy</strong> regarding objectionable content. You may NOT upload, post, or transmit any content that:</p>
+                    <p class="legal-text">Doppelgang maintains a <strong>zero-tolerance policy</strong> regarding
+                        objectionable content. You may NOT upload, post, or transmit any content that:</p>
                     <ul class="legal-list">
-                        <li>Is unlawful, harmful, threatening, abusive, harassing, defamatory, vulgar, obscene, or invasive of another's privacy.</li>
-                        <li>Contains hate speech or promotes discrimination based on race, gender, religion, nationality, disability, sexual orientation, or age.</li>
+                        <li>Is unlawful, harmful, threatening, abusive, harassing, defamatory, vulgar, obscene, or
+                            invasive of another's privacy.</li>
+                        <li>Contains hate speech or promotes discrimination based on race, gender, religion,
+                            nationality, disability, sexual orientation, or age.</li>
                         <li>Depicts sexual acts or sexually explicit material.</li>
                         <li>Promotes illegal acts or violence.</li>
                     </ul>
 
                     <h4 class="legal-subsection-title">3. Content Moderation & Reporting</h4>
                     <ul class="legal-list">
-                        <li><strong>Reporting:</strong> Users can flag objectionable content or abusive users by tapping the "Report" button on any profile.</li>
-                        <li><strong>Blocking:</strong> Users can block other users to prevent prevent further interaction.</li>
-                        <li><strong>Removal:</strong> Doppelgang reserves the right to remove any Content and ban any user that violates this Agreement, at its sole discretion and without prior notice. Reported content will be reviewed within 24 hours and removed if found to be in violation.</li>
+                        <li><strong>Reporting:</strong> Users can flag objectionable content or abusive users by tapping
+                            the "Report" button on any profile.</li>
+                        <li><strong>Blocking:</strong> Users can block other users to prevent prevent further
+                            interaction.</li>
+                        <li><strong>Removal:</strong> Doppelgang reserves the right to remove any Content and ban any
+                            user that violates this Agreement, at its sole discretion and without prior notice. Reported
+                            content will be reviewed within 24 hours and removed if found to be in violation.</li>
                     </ul>
 
                     <h4 class="legal-subsection-title">4. Age Restriction & Disclaimer</h4>
-                    <p class="legal-text">You must be at least 17 years old to use Doppelgang. The App is provided "as is" without warranties of any kind. Doppelgang does not guarantee that the App will be error-free or uninterrupted.</p>
+                    <p class="legal-text">You must be at least 17 years old to use Doppelgang. The App is provided "as
+                        is" without warranties of any kind. Doppelgang does not guarantee that the App will be
+                        error-free or uninterrupted.</p>
                 </div>
 
                 <div class="legal-divider"></div>
@@ -830,26 +975,58 @@
                     <span class="legal-date">Last Updated: November 25, 2025</span>
 
                     <h4 class="legal-subsection-title">1. Introduction</h4>
-                    <p class="legal-text">Doppelgang ("we", "our") respects your privacy. This Privacy Policy explains how we collect, use, and protect your information when you use our mobile application.</p>
+                    <p class="legal-text">Doppelgang ("we", "our") respects your privacy. This Privacy Policy explains
+                        how we collect, use, and protect your information when you use our mobile application.</p>
 
                     <h4 class="legal-subsection-title">2. Information We Collect</h4>
                     <ul class="legal-list">
-                        <li><strong>Account Information:</strong> Username, name, age, location, and bio provided during sign-up.</li>
+                        <li><strong>Account Information:</strong> Username, name, age, location, and bio provided during
+                            sign-up.</li>
                         <li><strong>Photos:</strong> The photos you upload to your profile.</li>
-                        <li><strong>Face Data:</strong> We use facial analysis technology to detect facial features in your photos.</li>
+                        <li><strong>Face Data:</strong> We use facial analysis technology to detect facial features in
+                            your photos.</li>
                     </ul>
 
                     <h4 class="legal-subsection-title">3. How We Use Face Data</h4>
                     <ul class="legal-list">
-                        <li><strong>Purpose:</strong> We use Face Data solely to calculate a "Match Score" between you and other users (including celebrities).</li>
-                        <li><strong>Processing:</strong> When you upload a photo, our server analyzes the facial geometry to create a mathematical representation (a "vector embedding").</li>
-                        <li><strong>Storage:</strong> We store this vector embedding in our secure database. We do <strong>not</strong> store the raw biometric scan of your face, only the mathematical representation.</li>
-                        <li><strong>Sharing:</strong> We do <strong>not</strong> share, sell, or trade your Face Data with any third parties.</li>
+                        <li><strong>Purpose:</strong> We use Face Data solely to calculate a "Match Score" between you
+                            and other users (including celebrities).</li>
+                        <li><strong>Processing:</strong> When you upload a photo, our server analyzes the facial
+                            geometry to create a mathematical representation (a "vector embedding").</li>
+                        <li><strong>Storage:</strong> We store this vector embedding in our secure database. We do
+                            <strong>not</strong> store the raw biometric scan of your face, only the mathematical
+                            representation.
+                        </li>
+                        <li><strong>Sharing:</strong> We do <strong>not</strong> share, sell, or trade your Face Data
+                            with any third parties.</li>
                     </ul>
 
                     <h4 class="legal-subsection-title">4. Data Retention & User Rights</h4>
-                    <p class="legal-text">Your data is retained only as long as you have an active account. You may delete your account and all associated data (including photos and Face Data) at any time by going to <strong>Profile > Settings > Delete Account</strong>. Upon deletion, your data is permanently removed from our servers.</p>
-                    <p class="legal-text">You have the right to access, correct, or delete your personal data. Contact us at <a href="mailto:support@doppelgang.app">support@doppelgang.app</a> for any privacy-related inquiries.</p>
+                    <p class="legal-text">Your data is retained only as long as you have an active account. You may
+                        delete your account and all associated data (including photos and Face Data) at any time by
+                        going to <strong>Profile > Settings > Delete Account</strong>. Upon deletion, your data is
+                        permanently removed from our servers.</p>
+                    <p class="legal-text">You have the right to access, correct, or delete your personal data. Contact
+                        us at <a href="mailto:support@doppelgang.app">support@doppelgang.app</a> for any privacy-related
+                        inquiries.</p>
+
+                    <h4 class="legal-subsection-title">7. Face Data Collection and Usage</h4>
+                    <ul class="legal-list">
+                        <li><strong>7.1 Data Collected:</strong> We collect the user's uploaded profile photo. From this
+                            photo, we derive a facial feature vector (a numerical representation of the face) and
+                            estimated age/gender metadata.</li>
+                        <li><strong>7.2 Purpose:</strong> The profile photo is stored to display the user's avatar to
+                            others in the app. The facial feature vector is strictly used to calculate a mathematical
+                            similarity score (cosine similarity) between users to find "Doppelgängers" (look-alikes).
+                        </li>
+                        <li><strong>7.3 Security & Sharing:</strong> All face data and photos are processed on our
+                            private, secure servers and stored in our encrypted database. We do not share, sell, or
+                            disclose face data or user photos to any third parties.</li>
+                        <li><strong>7.4 Retention:</strong> Both the profile photo and the derived face data are
+                            retained only for the duration of the user's active account. If a user deletes their account
+                            or updates their profile photo, the corresponding old face data is immediately and
+                            permanently deleted.</li>
+                    </ul>
                 </div>
 
             </div>
@@ -870,202 +1047,203 @@
 
     <!-- INTERACTIVE SCRIPTS -->
     <script>
-    (function() {
-        document.addEventListener('DOMContentLoaded', () => {
-            /* --- DYNAMIC STATUS TEXT --- */
-            const statusText = document.getElementById('statusText');
-            if (statusText) {
-                const statuses = ["Scanning Biometrics...", "Analyzing Geometry...", "Searching Database...", "Match Found!"];
-                let statusIndex = 0;
+        (function () {
+            document.addEventListener('DOMContentLoaded', () => {
+                /* --- DYNAMIC STATUS TEXT --- */
+                const statusText = document.getElementById('statusText');
+                if (statusText) {
+                    const statuses = ["Scanning Biometrics...", "Analyzing Geometry...", "Searching Database...", "Match Found!"];
+                    let statusIndex = 0;
 
-                setInterval(() => {
-                    statusIndex = (statusIndex + 1) % statuses.length;
-                    // Fade out
-                    statusText.style.opacity = 0;
-                    setTimeout(() => {
-                        statusText.innerText = statuses[statusIndex];
-                        // Fade in
-                        statusText.style.opacity = 1;
-                    }, 300); // Wait for fade out
-                }, 1200);
+                    setInterval(() => {
+                        statusIndex = (statusIndex + 1) % statuses.length;
+                        // Fade out
+                        statusText.style.opacity = 0;
+                        setTimeout(() => {
+                            statusText.innerText = statuses[statusIndex];
+                            // Fade in
+                            statusText.style.opacity = 1;
+                        }, 300); // Wait for fade out
+                    }, 1200);
 
-                statusText.style.transition = "opacity 0.3s ease";
-            }
-
-            /* --- HOLOGRAPHIC NEURAL CLOUD SIMULATION --- */
-            const canvas = document.getElementById('hero-canvas');
-            if (!canvas) return;
-            
-            const ctx = canvas.getContext('2d');
-            let width, height;
-            let particles = [];
-            
-            // Configuration
-            const particleCount = 140; 
-            const connectionDistance = 120;
-            const mouseRepelDist = 250;
-            const mouseRepelForce = 2.5;
-            const friction = 0.96;
-            const returnStrength = 0.03;
-
-            // Mouse State
-            const mouse = { x: -1000, y: -1000 };
-            
-            function resize() {
-                if (!canvas.parentElement) return;
-                width = canvas.width = window.innerWidth;
-                height = canvas.height = canvas.parentElement.offsetHeight;
-                initParticles();
-            }
-            window.addEventListener('resize', resize);
-            
-            if (canvas.parentElement) {
-                canvas.parentElement.addEventListener('mousemove', (e) => {
-                    const rect = canvas.getBoundingClientRect();
-                    mouse.x = e.clientX - rect.left;
-                    mouse.y = e.clientY - rect.top;
-                });
-                canvas.parentElement.addEventListener('mouseleave', () => {
-                    mouse.x = -1000;
-                    mouse.y = -1000;
-                });
-            }
-
-            class Particle {
-                constructor() {
-                    this.originX = Math.random() * width;
-                    this.originY = Math.random() * height;
-                    this.x = this.originX;
-                    this.y = this.originY;
-                    this.vx = 0;
-                    this.vy = 0;
-                    this.size = Math.random() * 2 + 1;
-                    // Random float offset for organic movement
-                    this.floatOffset = Math.random() * 100;
+                    statusText.style.transition = "opacity 0.3s ease";
                 }
 
-                update(time) {
-                    // 1. Organic Floating (Perlin-ish sine waves)
-                    const floatX = Math.sin(time * 0.001 + this.floatOffset) * 20;
-                    const floatY = Math.cos(time * 0.0015 + this.floatOffset) * 20;
-                    const targetX = this.originX + floatX;
-                    const targetY = this.originY + floatY;
+                /* --- HOLOGRAPHIC NEURAL CLOUD SIMULATION --- */
+                const canvas = document.getElementById('hero-canvas');
+                if (!canvas) return;
 
-                    // 2. Mouse Interaction (Elastic Repulsion)
-                    const dx = mouse.x - this.x;
-                    const dy = mouse.y - this.y;
-                    const dist = Math.sqrt(dx*dx + dy*dy);
-                    
-                    if (dist < mouseRepelDist) {
-                        const angle = Math.atan2(dy, dx);
-                        const force = (mouseRepelDist - dist) / mouseRepelDist;
-                        const power = force * mouseRepelForce;
-                        
-                        this.vx -= Math.cos(angle) * power;
-                        this.vy -= Math.sin(angle) * power;
+                const ctx = canvas.getContext('2d');
+                let width, height;
+                let particles = [];
+
+                // Configuration
+                const particleCount = 140;
+                const connectionDistance = 120;
+                const mouseRepelDist = 250;
+                const mouseRepelForce = 2.5;
+                const friction = 0.96;
+                const returnStrength = 0.03;
+
+                // Mouse State
+                const mouse = { x: -1000, y: -1000 };
+
+                function resize() {
+                    if (!canvas.parentElement) return;
+                    width = canvas.width = window.innerWidth;
+                    height = canvas.height = canvas.parentElement.offsetHeight;
+                    initParticles();
+                }
+                window.addEventListener('resize', resize);
+
+                if (canvas.parentElement) {
+                    canvas.parentElement.addEventListener('mousemove', (e) => {
+                        const rect = canvas.getBoundingClientRect();
+                        mouse.x = e.clientX - rect.left;
+                        mouse.y = e.clientY - rect.top;
+                    });
+                    canvas.parentElement.addEventListener('mouseleave', () => {
+                        mouse.x = -1000;
+                        mouse.y = -1000;
+                    });
+                }
+
+                class Particle {
+                    constructor() {
+                        this.originX = Math.random() * width;
+                        this.originY = Math.random() * height;
+                        this.x = this.originX;
+                        this.y = this.originY;
+                        this.vx = 0;
+                        this.vy = 0;
+                        this.size = Math.random() * 2 + 1;
+                        // Random float offset for organic movement
+                        this.floatOffset = Math.random() * 100;
                     }
 
-                    // 3. Elastic Return to Target
-                    this.vx += (targetX - this.x) * returnStrength;
-                    this.vy += (targetY - this.y) * returnStrength;
+                    update(time) {
+                        // 1. Organic Floating (Perlin-ish sine waves)
+                        const floatX = Math.sin(time * 0.001 + this.floatOffset) * 20;
+                        const floatY = Math.cos(time * 0.0015 + this.floatOffset) * 20;
+                        const targetX = this.originX + floatX;
+                        const targetY = this.originY + floatY;
 
-                    // 4. Physics
-                    this.vx *= friction;
-                    this.vy *= friction;
-                    this.x += this.vx;
-                    this.y += this.vy;
-                }
+                        // 2. Mouse Interaction (Elastic Repulsion)
+                        const dx = mouse.x - this.x;
+                        const dy = mouse.y - this.y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
 
-                draw() {
-                    ctx.fillStyle = `rgba(6, 199, 85, 0.6)`;
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                    ctx.fill();
-                }
-            }
+                        if (dist < mouseRepelDist) {
+                            const angle = Math.atan2(dy, dx);
+                            const force = (mouseRepelDist - dist) / mouseRepelDist;
+                            const power = force * mouseRepelForce;
 
-            function initParticles() {
-                particles = [];
-                for(let i=0; i<particleCount; i++) {
-                    particles.push(new Particle());
-                }
-            }
-
-            function animate(time) {
-                ctx.clearRect(0, 0, width, height);
-
-                // Update and Draw Particles
-                particles.forEach(p => {
-                    p.update(time);
-                    p.draw();
-                });
-
-                // Draw Network & Triangles
-                ctx.strokeStyle = `rgba(6, 199, 85, 0.15)`;
-                ctx.lineWidth = 0.5;
-
-                for (let i = 0; i < particles.length; i++) {
-                    const p1 = particles[i];
-                    
-                    // Optimization: Check proximity with others
-                    // Note: Nested loop is fine for N=140
-                    let neighbors = [];
-                    
-                    for (let j = i + 1; j < particles.length; j++) {
-                        const p2 = particles[j];
-                        const dx = p1.x - p2.x;
-                        const dy = p1.y - p2.y;
-                        const distSq = dx*dx + dy*dy;
-                        
-                        if (distSq < connectionDistance * connectionDistance) {
-                            neighbors.push(p2);
-                            
-                            // Draw Line
-                            ctx.beginPath();
-                            ctx.moveTo(p1.x, p1.y);
-                            ctx.lineTo(p2.x, p2.y);
-                            ctx.stroke();
+                            this.vx -= Math.cos(angle) * power;
+                            this.vy -= Math.sin(angle) * power;
                         }
+
+                        // 3. Elastic Return to Target
+                        this.vx += (targetX - this.x) * returnStrength;
+                        this.vy += (targetY - this.y) * returnStrength;
+
+                        // 4. Physics
+                        this.vx *= friction;
+                        this.vy *= friction;
+                        this.x += this.vx;
+                        this.y += this.vy;
                     }
 
-                    // Triangulation Fill (Holographic Effect)
-                    // If a particle has at least 2 neighbors, form triangles
-                    if (neighbors.length >= 2) {
-                        for (let k = 0; k < neighbors.length - 1; k++) {
-                            const p2 = neighbors[k];
-                            const p3 = neighbors[k+1];
-                            
-                            // Check if p2 and p3 are also connected (forming a closed triangle)
-                            const dx = p2.x - p3.x;
-                            const dy = p2.y - p3.y;
-                            const distSq = dx*dx + dy*dy;
-                            
+                    draw() {
+                        ctx.fillStyle = `rgba(6, 199, 85, 0.6)`;
+                        ctx.beginPath();
+                        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+                }
+
+                function initParticles() {
+                    particles = [];
+                    for (let i = 0; i < particleCount; i++) {
+                        particles.push(new Particle());
+                    }
+                }
+
+                function animate(time) {
+                    ctx.clearRect(0, 0, width, height);
+
+                    // Update and Draw Particles
+                    particles.forEach(p => {
+                        p.update(time);
+                        p.draw();
+                    });
+
+                    // Draw Network & Triangles
+                    ctx.strokeStyle = `rgba(6, 199, 85, 0.15)`;
+                    ctx.lineWidth = 0.5;
+
+                    for (let i = 0; i < particles.length; i++) {
+                        const p1 = particles[i];
+
+                        // Optimization: Check proximity with others
+                        // Note: Nested loop is fine for N=140
+                        let neighbors = [];
+
+                        for (let j = i + 1; j < particles.length; j++) {
+                            const p2 = particles[j];
+                            const dx = p1.x - p2.x;
+                            const dy = p1.y - p2.y;
+                            const distSq = dx * dx + dy * dy;
+
                             if (distSq < connectionDistance * connectionDistance) {
-                                // Draw Triangle Fill
-                                // Calculate opacity based on movement speed for "shimmer"
-                                const speed = Math.abs(p1.vx) + Math.abs(p1.vy);
-                                const alpha = Math.min(0.02 + speed * 0.01, 0.08);
-                                
-                                ctx.fillStyle = `rgba(6, 199, 85, ${alpha})`;
+                                neighbors.push(p2);
+
+                                // Draw Line
                                 ctx.beginPath();
                                 ctx.moveTo(p1.x, p1.y);
                                 ctx.lineTo(p2.x, p2.y);
-                                ctx.lineTo(p3.x, p3.y);
-                                ctx.closePath();
-                                ctx.fill();
+                                ctx.stroke();
+                            }
+                        }
+
+                        // Triangulation Fill (Holographic Effect)
+                        // If a particle has at least 2 neighbors, form triangles
+                        if (neighbors.length >= 2) {
+                            for (let k = 0; k < neighbors.length - 1; k++) {
+                                const p2 = neighbors[k];
+                                const p3 = neighbors[k + 1];
+
+                                // Check if p2 and p3 are also connected (forming a closed triangle)
+                                const dx = p2.x - p3.x;
+                                const dy = p2.y - p3.y;
+                                const distSq = dx * dx + dy * dy;
+
+                                if (distSq < connectionDistance * connectionDistance) {
+                                    // Draw Triangle Fill
+                                    // Calculate opacity based on movement speed for "shimmer"
+                                    const speed = Math.abs(p1.vx) + Math.abs(p1.vy);
+                                    const alpha = Math.min(0.02 + speed * 0.01, 0.08);
+
+                                    ctx.fillStyle = `rgba(6, 199, 85, ${alpha})`;
+                                    ctx.beginPath();
+                                    ctx.moveTo(p1.x, p1.y);
+                                    ctx.lineTo(p2.x, p2.y);
+                                    ctx.lineTo(p3.x, p3.y);
+                                    ctx.closePath();
+                                    ctx.fill();
+                                }
                             }
                         }
                     }
-                }
-                
-                requestAnimationFrame(animate);
-            }
 
-            resize();
-            requestAnimationFrame(animate);
-        });
-    })();
+                    requestAnimationFrame(animate);
+                }
+
+                resize();
+                requestAnimationFrame(animate);
+            });
+        })();
     </script>
 
 </body>
+
 </html>
